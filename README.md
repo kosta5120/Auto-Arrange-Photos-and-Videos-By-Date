@@ -12,3 +12,7 @@
 
 ![2020-11-19 13_53_30-Window](https://user-images.githubusercontent.com/35446857/99662998-a6e92b00-2a6e-11eb-8618-6c48144fa582.png)
 
+
+# To downlaod the Setup  
+[Auto Arrange Photos and Videos Setup.zip](https://github.com/kosta5120/Auto-Arrange-Photos-and-Videos-By-Date/files/5566564/Auto.Arrange.Photos.and.Videos.Setup.zip)
+
