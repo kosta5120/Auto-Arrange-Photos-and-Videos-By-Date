@@ -1,0 +1,17 @@
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\UnitTestProjectForSP.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\UnitTestProjectForSP.pdb
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\SortingPhotosByDate.exe
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\SortingPhotosByDate.pdb
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\SortingPhotosByDate.exe.config
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\obj\Debug\UnitTestProjectForSP.csprojAssemblyReference.cache
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\obj\Debug\UnitTestProjectForSP.csproj.CoreCompileInputs.cache
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\obj\Debug\UnitTestProjectForSP.csproj.CopyComplete
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\obj\Debug\UnitTestProjectForSP.dll
+C:\Users\KOSTA\Desktop\My projects\WPF\SortingPhotosByDate\UnitTestProjectForSP\obj\Debug\UnitTestProjectForSP.pdb

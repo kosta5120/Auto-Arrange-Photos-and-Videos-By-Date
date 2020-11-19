@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrangePhotosByDate", "SortingPhotosByDate\ArrangePhotosByDate.csproj", "{F2FE4B65-7A59-4A25-A51A-936A6136D4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectForSP", "UnitTestProjectForSP\UnitTestProjectForSP.csproj", "{DEE52F97-F909-43E8-A3EF-0FD25FC5C93C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSortingPhotos", "SetupSortingPhotos\SetupSortingPhotos.vdproj", "{D8152061-C2B4-4810-B310-58F9B8C81E75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2FE4B65-7A59-4A25-A51A-936A6136D4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2FE4B65-7A59-4A25-A51A-936A6136D4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2FE4B65-7A59-4A25-A51A-936A6136D4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2FE4B65-7A59-4A25-A51A-936A6136D4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE52F97-F909-43E8-A3EF-0FD25FC5C93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE52F97-F909-43E8-A3EF-0FD25FC5C93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE52F97-F909-43E8-A3EF-0FD25FC5C93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE52F97-F909-43E8-A3EF-0FD25FC5C93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8152061-C2B4-4810-B310-58F9B8C81E75}.Debug|Any CPU.ActiveCfg = Debug
+		{D8152061-C2B4-4810-B310-58F9B8C81E75}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93C7EDB2-6A41-445C-A015-5BE1ECEC21A0}
+	EndGlobalSection
+EndGlobal

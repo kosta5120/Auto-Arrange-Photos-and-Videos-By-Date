@@ -1,0 +1,24 @@
+att queue
+Cardo
+Continental
+gilat
+Goji
+Invenco
+microtronics
+Mind - Delete
+Nexcom
+Nova - Delete
+QI 27 test - Delete
+radware 
+radware tac - Not to delete
+RMA Servotronics - Delete
+Scheider Electric
+SE
+siklu
+Site For Molex
+Stanley
+Tailyn - Not to delete
+Teratech3 - Delete
+testcom - Delete
+Wavestream Test new - Delete
+Wavestream Test Newest

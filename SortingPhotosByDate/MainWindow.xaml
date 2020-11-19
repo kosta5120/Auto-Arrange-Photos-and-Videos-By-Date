@@ -1,0 +1,13 @@
+﻿<Window x:Class="SortingPhotosByDate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SortingPhotosByDate"
+        xmlns:view="clr-namespace:SortingPhotosByDate.View"
+        mc:Ignorable="d"
+        Title="Auto Arrange Photos and Videos By Date" Height="712" Width="764" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,2,0">
+        <view:SortingPhotos Margin="22,0"/>
+    </Grid>
+</Window>

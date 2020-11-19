@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SortingPhotosByDate.View.SortingPhotos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SortingPhotosByDate.View"
+             xmlns:model="clr-namespace:SortingPhotosByDate.Model"
+             xmlns:viewModel="clr-namespace:SortingPhotosByDate.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="670" Width="700">
+    <UserControl.Resources>
+        <viewModel:GetPathOfImagesViewModel x:Key="Path"/>
+        <viewModel:ArrangPhotosViewModel x:Key="Sorting"/>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <model:ImagePathModel/>
+    </UserControl.DataContext>
+
+    <Grid Margin="0,0,-25,0" RenderTransformOrigin="0.448,0.813">
+        <Label Content="Auto arrange Photos and Videos" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="470"/>
+        <Button IsEnabled="{Binding IsEnabled}" Content="Browes" Command="{Binding LocationOfImages, Source={StaticResource Path}}" CommandParameter="{Binding}" HorizontalAlignment="Left" Margin="600,95,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="2.709,0.5"/>
+        <Button IsEnabled="{Binding IsEnabled}" Content="Browes" Command="{Binding NewLocationOfImages, Source={StaticResource Path}}" CommandParameter="{Binding}" HorizontalAlignment="Left" Margin="600,130,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.4,0.75"/>
+
+        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="20" Margin="10,95,0,0" TextWrapping="Wrap" Text="{Binding PathOfImages}" VerticalAlignment="Top" Width="575"/>
+        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="20" Margin="10,130,0,0" TextWrapping="Wrap" Text="{Binding NewPath}" VerticalAlignment="Top" Width="575"/>
+
+        <ListView x:Name="listView" ItemsSource="{Binding NewLocation}" Margin="10,200,35,105"/>
+
+        <Button IsEnabled="{Binding IsEnabled}" Content="Start To Arrang" Command="{Binding ArrangCommand, Source={StaticResource Sorting}}" CommandParameter="{Binding}" HorizontalAlignment="Left" Margin="255,165,0,0" VerticalAlignment="Top" Width="175" RenderTransformOrigin="0.5,0.5"/>
+        <ProgressBar Name="progBar" Minimum="0" Maximum="{Binding ProgBarLength}" Value="{Binding ProgBarValue}" Margin="10,596,35,50" Background="White"/>
+        <TextBlock FontSize="18" HorizontalAlignment="Center" Text="{Binding ElementName=progBar, Path=Value, StringFormat={}Quantity {0}}"  Margin="310,596,195,50" Width="220" />
+    </Grid>
+</UserControl>
