@@ -16,7 +16,7 @@ namespace SortingPhotosByDate.ViewModel
             {
                 try
                 {
-                    if(Regex.IsMatch(file, @"jpg|jpeg|png|gif|tiff|bmp|mp4|svg$") && !Regex.IsMatch(file, @"\d{4}-\d{2}"))
+                    if(Regex.IsMatch(file.ToLower(), @"jpg|jpeg|png|gif|tiff|bmp|mp4|svg|mov$") && !Regex.IsMatch(file, @"\d{4}-\d{2}"))
                         paths.Add(file);
                 }
                 catch {}
