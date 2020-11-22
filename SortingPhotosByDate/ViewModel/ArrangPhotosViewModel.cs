@@ -39,13 +39,13 @@ namespace SortingPhotosByDate.ViewModel
 
                 paths = applyAllFiles.ApplyFiles(location, paths);
 
-                if(paths.Count == 0)
+                if (paths.Count == 0)
                 {
                     MessageBox.Show("There is no photos or videos to arrange", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     imagePathModel.IsEnabled = true;
                 }
-                    
+
                 else
                 {
                     imagePathModel.ProgBarLength = paths.Count;
@@ -57,47 +57,62 @@ namespace SortingPhotosByDate.ViewModel
                             foreach (var file in paths)
                             {
                                 i++;
-                                lastModified = File.GetLastWriteTime(file);
-                                var fileName = Path.GetFileName(file);
-                                dateMonth = lastModified.ToString("yyyy-MM");
+                                var trg = string.Empty;
                                 var src = file;
-                                Regex date = new Regex(@"(?<date>20\d[0-9]+)");
-                                var matchDate = date.Match(fileName);
-
-                                if (matchDate.Success)
+                                try
                                 {
-                                    var dateFromFileName = DateTime.ParseExact(matchDate.Groups["date"].Value.ToString(), "yyyyMMdd", null); /*DateTime.Parse(matchDate.Groups["date"].Value);*/
+                                    lastModified = File.GetLastWriteTime(file);
+                                    var fileName = Path.GetFileName(file);
+                                    dateMonth = lastModified.ToString("yyyy-MM");
+                                    Regex date = new Regex(@"(?<date>20\d[0-9]+)");
+                                    var matchDate = date.Match(fileName);
 
-                                    if (dateFromFileName < lastModified)
-                                        dateMonth = dateFromFileName.ToString("yyyy-MM");
+                                    if (matchDate.Success)
+                                    {
+                                        try
+                                        {
+                                            var dateFromFileName = DateTime.ParseExact(matchDate.Groups["date"].Value.ToString(), "yyyyMMdd", null); /*DateTime.Parse(matchDate.Groups["date"].Value);*/
 
+                                            if (dateFromFileName < lastModified)
+                                                dateMonth = dateFromFileName.ToString("yyyy-MM");
+                                        }
+                                        catch { }
+
+                                    }
+
+                                    trg = $"{newLocation}\\{dateMonth}";
+                                    Directory.CreateDirectory(trg);
+
+                                    if (File.Exists($"{trg}\\{fileName}") && new FileInfo(file).Length != new FileInfo($"{trg}\\{fileName}").Length || File.Exists($"{trg}\\{fileName}") && new FileInfo(src).Length == new FileInfo($"{trg}\\{fileName}").Length)
+                                    {
+
+                                        trg = Path.Combine(trg,
+                                                            string.Concat(Path.GetFileNameWithoutExtension(fileName) + "_",
+                                                            DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                                                            Path.GetExtension(fileName)));
+
+                                        File.Move(src, trg);
+                                    }
+                                    else
+                                    {
+                                        trg = $"{trg}\\{fileName}";
+                                        File.Move(src, trg);
+                                    }
+
+                                    ((IProgress<int>)progress).Report(i);
+                                    Thread.Sleep(100);
+                                    App.Current.Dispatcher.Invoke((Action)delegate
+                                    {
+                                        imagePathModel.NewLocation.Add(trg);
+                                    });
                                 }
-
-                                var trg = $"{newLocation}\\{dateMonth}";
-                                Directory.CreateDirectory(trg);
-
-                                if (File.Exists($"{trg}\\{fileName}") && new FileInfo(file).Length != new FileInfo($"{trg}\\{fileName}").Length || File.Exists($"{trg}\\{fileName}") && new FileInfo(src).Length == new FileInfo($"{trg}\\{fileName}").Length)
+                                catch
                                 {
-
-                                    trg = Path.Combine(trg,
-                                                        string.Concat(Path.GetFileNameWithoutExtension(fileName) + "_",
-                                                        DateTime.Now.ToString("yyyyMMddHHmmssfff"),
-                                                        Path.GetExtension(fileName)));
-
+                                    trg = $"{newLocation}\\No date";
+                                    Directory.CreateDirectory(trg);
                                     File.Move(src, trg);
                                 }
-                                else
-                                {
-                                    trg = $"{trg}\\{fileName}";
-                                    File.Move(src, trg);
-                                }
 
-                                ((IProgress<int>)progress).Report(i);
-                                Thread.Sleep(100);
-                                App.Current.Dispatcher.Invoke((Action)delegate
-                                {
-                                    imagePathModel.NewLocation.Add(trg);
-                                });
                             }
 
                             var dialorResult = MessageBox.Show("Finished to sort all files.\n\rDo you whant to open the location of sorted files?", "Done", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -110,7 +125,7 @@ namespace SortingPhotosByDate.ViewModel
                             {
                                 imagePathModel.IsEnabled = true;
                             }
-                                
+
                         }
                         catch (Exception ex)
                         {
@@ -118,7 +133,7 @@ namespace SortingPhotosByDate.ViewModel
                         }
                     });
                 }
-                
+
             }
 
         }
